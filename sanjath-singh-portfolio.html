@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjath Singh | AI, Data & Analytics Engineer</title>
+<meta name="description" content="Sanjath Singh — AI, Data & Analytics Engineer specializing in Databricks, Document AI, GenAI, and enterprise analytics. Bridging business problems to production solutions.">
+<meta property="og:title" content="Sanjath Singh | AI, Data & Analytics Engineer">
+<meta property="og:description" content="Transforming Enterprise Data into Intelligent Solutions">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #FF3621;
+  --secondary: #7C3AED;
+  --accent: #00D4FF;
+  --bg: #050816;
+  --bg-elevated: rgba(15, 23, 42, 0.55);
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --text: #F1F5F9;
+  --muted: #94A3B8;
+  --card-radius: 20px;
+  --font: 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+[data-theme="light"] {
+  --bg: #F8FAFC; --text: #0F172A; --muted: #64748B;
+  --glass: rgba(255,255,255,0.85); --glass-border: rgba(15,23,42,0.08);
+  --bg-elevated: rgba(255,255,255,0.9);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+section{padding:6rem 0;position:relative}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.section-title{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem}
+.section-desc{color:var(--muted);max-width:640px;font-size:1.05rem;margin-bottom:3rem}
+.glass{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--card-radius)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:999px;font-weight:600;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+.btn-primary{background:linear-gradient(135deg,var(--primary),#FF6B4A);color:#fff;box-shadow:0 8px 32px rgba(255,54,33,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,54,33,.35)}
+.btn-ghost{border:1px solid var(--glass-border);background:var(--glass)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.tag{display:inline-block;padding:.25rem .65rem;border-radius:999px;font-size:.72rem;font-weight:600;background:rgba(0,212,255,.1);color:var(--accent);border:1px solid rgba(0,212,255,.2)}
+.tag-purple{background:rgba(124,58,237,.12);color:#A78BFA;border-color:rgba(124,58,237,.25)}
+.tag-red{background:rgba(255,54,33,.12);color:#FF8A7A;border-color:rgba(255,54,33,.25)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:background .3s,backdrop-filter .3s}
+nav.scrolled{background:rgba(5,8,22,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.logo{font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
+.logo span{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:.75rem;align-items:center}
+.theme-toggle{width:40px;height:40px;border-radius:50%;border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.menu-toggle{display:none;font-size:1.4rem}
+@media(max-width:900px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(5,8,22,.97);padding:1.5rem;border-bottom:1px solid var(--glass-border)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;animation:float 12s ease-in-out infinite}
+.orb-1{width:500px;height:500px;background:var(--secondary);top:-10%;right:-5%}
+.orb-2{width:400px;height:400px;background:var(--primary);bottom:10%;left:-10%;animation-delay:-4s}
+.orb-3{width:300px;height:300px;background:var(--accent);top:40%;left:40%;animation-delay:-8s;opacity:.2}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
+#particles{position:absolute;inset:0;opacity:.4}
+.hero-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:999px;font-size:.8rem;font-weight:600;margin-bottom:1.5rem;border:1px solid rgba(0,212,255,.25);background:rgba(0,212,255,.06);color:var(--accent)}
+.hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+#rotatingTitle{transition:opacity .3s ease}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-.04em;margin-bottom:1.25rem}
+.hero-title .gradient{background:linear-gradient(135deg,var(--text) 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);max-width:680px;margin-bottom:2.5rem;line-height:1.7}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem}
+.hero-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.stat-card{padding:1.25rem;text-align:center}
+.stat-val{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:800;font-variant-numeric:tabular-nums;background:linear-gradient(135deg,var(--text),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.72rem;color:var(--muted);margin-top:.25rem;font-weight:500}
+@media(max-width:768px){.hero-stats{grid-template-columns:repeat(2,1fr)}.hero-stats .stat-card:last-child{grid-column:span 2}}
+
+/* IMPACT */
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.impact-card{padding:2rem;position:relative;overflow:hidden}
+.impact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+.impact-num{font-size:2.75rem;font-weight:800;line-height:1;margin-bottom:.5rem}
+.impact-card:nth-child(1) .impact-num{color:var(--primary)}
+.impact-card:nth-child(2) .impact-num{color:var(--accent)}
+.impact-card:nth-child(3) .impact-num{color:var(--secondary)}
+.impact-card:nth-child(4) .impact-num{color:var(--accent)}
+.impact-card:nth-child(5) .impact-num{color:var(--primary)}
+.impact-card:nth-child(6) .impact-num{color:var(--secondary)}
+.impact-label{font-size:.9rem;color:var(--muted);font-weight:500}
+.impact-context{font-size:.78rem;color:var(--muted);margin-top:.5rem;opacity:.8}
+@media(max-width:768px){.impact-grid{grid-template-columns:1fr 1fr}}
+
+/* JOURNEY */
+.journey-track{display:flex;gap:0;position:relative;padding:2rem 0;overflow-x:auto}
+.journey-track::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent));transform:translateY(-50%)}
+.journey-node{flex:1;min-width:140px;text-align:center;position:relative;z-index:1;padding:0 .5rem}
+.journey-dot{width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);margin:0 auto 1rem}
+.journey-node h4{font-size:.85rem;font-weight:700;margin-bottom:.25rem}
+.journey-node p{font-size:.72rem;color:var(--muted)}
+
+/* CAPABILITIES */
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.cap-card{padding:2rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+.cap-card:hover{transform:translateY(-4px);border-color:rgba(0,212,255,.25);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.cap-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem}
+.cap-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+.cap-card p{font-size:.88rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
+.cap-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+@media(max-width:768px){.cap-grid{grid-template-columns:1fr}}
+
+/* PROJECTS */
+.project-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.tab-btn{padding:.5rem 1.1rem;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--muted);border:1px solid transparent;transition:all .2s}
+.tab-btn.active,.tab-btn:hover{color:var(--text);border-color:var(--glass-border);background:var(--glass)}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.project-card{cursor:pointer;overflow:hidden;transition:transform .3s,border-color .3s}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,.3)}
+.project-hero{height:180px;background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(0,212,255,.1));display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.project-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg),transparent 60%)}
+.project-body{padding:1.75rem}
+.project-body h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.project-body p{font-size:.88rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
+.project-meta{display:flex;flex-wrap:wrap;gap:.35rem}
+@media(max-width:768px){.project-grid{grid-template-columns:1fr}}
+
+/* DATABRICKS HUB */
+.db-hub{background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+.db-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem}
+.db-tile{padding:1.5rem;text-align:center;transition:transform .3s,border-color .3s}
+.db-tile:hover{transform:scale(1.03);border-color:rgba(255,54,33,.3)}
+.db-tile-icon{font-size:1.75rem;margin-bottom:.75rem}
+.db-tile h4{font-size:.85rem;font-weight:700}
+.db-arch{padding:2.5rem;text-align:center}
+.arch-diagram{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;align-items:center;margin-top:2rem}
+.arch-node{padding:1rem;border-radius:12px;font-size:.75rem;font-weight:600;border:1px solid var(--glass-border)}
+.arch-arrow{color:var(--accent);font-size:1.2rem;text-align:center}
+@media(max-width:900px){.db-grid{grid-template-columns:repeat(2,1fr)}.arch-diagram{grid-template-columns:1fr;gap:.5rem}.arch-arrow{transform:rotate(90deg)}}
+
+/* SKILLS MATRIX */
+.matrix-wrap{overflow-x:auto;padding-bottom:1rem}
+.matrix-table{width:100%;border-collapse:separate;border-spacing:0 .5rem;min-width:700px}
+.matrix-table th,.matrix-table td{padding:.75rem 1rem;text-align:center;font-size:.82rem}
+.matrix-table th:first-child,.matrix-table td:first-child{text-align:left;font-weight:600}
+.level-dot{width:14px;height:14px;border-radius:50%;display:inline-block;background:rgba(255,255,255,.08);border:1px solid var(--glass-border);cursor:pointer;transition:all .2s}
+.level-dot.active{background:var(--accent);border-color:var(--accent);box-shadow:0 0 12px rgba(0,212,255,.5)}
+.level-dot.expert{background:var(--primary);border-color:var(--primary);box-shadow:0 0 12px rgba(255,54,33,.4)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--primary),var(--secondary),var(--accent))}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
+.tl-item::before{content:'';position:absolute;left:-2rem;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);transform:translateX(-5px)}
+.tl-period{font-size:.75rem;color:var(--accent);font-weight:600;margin-bottom:.25rem}
+.tl-role{font-size:1.1rem;font-weight:700;margin-bottom:.15rem}
+.tl-company{color:var(--muted);font-size:.9rem;margin-bottom:.75rem}
+.tl-impact{font-size:.88rem;color:var(--muted);margin-bottom:.75rem;line-height:1.6}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+
+/* CERTS */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cert-card{padding:1.75rem;transition:transform .3s,border-color .3s}
+.cert-card:hover{transform:translateY(-3px);border-color:rgba(255,54,33,.25)}
+.cert-card.featured{border-color:rgba(255,54,33,.35);background:linear-gradient(135deg,rgba(255,54,33,.06),rgba(124,58,237,.04))}
+.cert-issuer{font-size:.72rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.cert-name{font-size:1rem;font-weight:700;margin-bottom:.35rem}
+.cert-date{font-size:.8rem;color:var(--muted);margin-bottom:.75rem}
+@media(max-width:768px){.cert-grid{grid-template-columns:1fr}}
+
+/* TESTIMONIALS */
+.testimonial-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.testimonial{padding:2rem;position:relative}
+.testimonial::before{content:'"';position:absolute;top:1rem;left:1.5rem;font-size:4rem;color:var(--secondary);opacity:.2;line-height:1;font-family:Georgia,serif}
+.testimonial p{font-size:.95rem;line-height:1.7;color:var(--muted);margin-bottom:1.25rem;padding-top:1rem;font-style:italic}
+.testimonial-author{font-weight:700;font-size:.9rem}
+.testimonial-role{font-size:.8rem;color:var(--muted)}
+@media(max-width:768px){.testimonial-grid{grid-template-columns:1fr}}
+
+/* CONTACT */
+#contact{background:linear-gradient(180deg,transparent,rgba(124,58,237,.06))}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.contact-links{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:14px;border:1px solid var(--glass-border);transition:border-color .2s,background .2s}
+.contact-link:hover{border-color:var(--accent);background:rgba(0,212,255,.04)}
+.contact-cta{padding:3rem;text-align:center;background:linear-gradient(135deg,rgba(255,54,33,.08),rgba(124,58,237,.08))}
+.contact-cta h3{font-size:1.75rem;font-weight:800;margin-bottom:.75rem}
+.contact-cta p{color:var(--muted);margin-bottom:1.5rem}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,8,22,.85);backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--bg-elevated);border:1px solid var(--glass-border);border-radius:24px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;padding:2.5rem;position:relative;transform:scale(.95);transition:transform .3s}
+.modal-overlay.open .modal-box{transform:scale(1)}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border-radius:50%;border:1px solid var(--glass-border);font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+.modal-sub{font-size:.8rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.modal-title{font-size:1.5rem;font-weight:800;margin-bottom:1.5rem}
+.modal-section{margin-bottom:1.5rem}
+.modal-section h4{font-size:.85rem;font-weight:700;color:var(--primary);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+.modal-section p,.modal-section li{font-size:.9rem;color:var(--muted);line-height:1.7}
+.modal-section ul{padding-left:1.25rem}
+.modal-arch{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+.modal-arch div{padding:.75rem;border-radius:10px;border:1px solid var(--glass-border);font-size:.78rem;text-align:center;font-weight:600}
+
+/* FOOTER */
+footer{padding:2rem 0;border-top:1px solid var(--glass-border);text-align:center;font-size:.82rem;color:var(--muted)}
+footer a{color:var(--accent)}
+
+/* BRIDGE */
+.bridge{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;margin:2rem 0;padding:2rem;border-radius:var(--card-radius)}
+.bridge-step{padding:.6rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--glass-border);background:var(--glass)}
+.bridge-arrow{color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">Sanjath <span>Singh</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#impact">Impact</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#projects">Projects</a>
+      <a href="#databricks">Databricks</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Credentials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <a href="#contact" class="btn btn-primary" style="padding:.55rem 1.2rem;font-size:.82rem">Contact</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particles"></canvas>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge reveal"><span id="rotatingTitle">AI, Data &amp; Analytics Engineer</span></div>
+    <h1 class="hero-title reveal">Transforming Enterprise Data<br>into <span class="gradient">Intelligent Solutions</span></h1>
+    <p class="hero-sub reveal">I'm <strong>Sanjath Singh</strong> — an AI, Data &amp; Analytics Engineer who bridges business problems → data pipelines → AI systems → production-ready solutions. Databricks-certified with deep expertise in Document AI, Lakehouse architecture, and enterprise analytics.</p>
+    <div class="hero-ctas reveal">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="Sanjath-Singh-Resume.pdf" download="Sanjath-Singh-Resume.pdf" class="btn btn-ghost">Download Resume</a>
+      <a href="#contact" class="btn btn-ghost">Contact Me</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat-card glass"><div class="stat-val" data-count="4">0</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-card glass"><div class="stat-val" data-count="11">0</div><div class="stat-label">Projects Delivered</div></div>
+      <div class="stat-card glass"><div class="stat-val" data-count="12">0</div><div class="stat-label">Certifications</div></div>
+      <div class="stat-card glass"><div class="stat-val" data-count="8">0</div><div class="stat-label">Platforms</div></div>
+      <div class="stat-card glass"><div class="stat-val" data-count="5">0</div><div class="stat-label">Industries</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<section id="about" style="padding:4rem 0">
+  <div class="container reveal">
+    <div class="section-label">Personal Brand</div>
+    <h2 class="section-title">Business Problems → Data → AI → Production</h2>
+    <div class="bridge glass">
+      <span class="bridge-step">Business Problem</span>
+      <span class="bridge-arrow">→</span>
+      <span class="bridge-step">Data Engineering</span>
+      <span class="bridge-arrow">→</span>
+      <span class="bridge-step">AI &amp; Analytics</span>
+      <span class="bridge-arrow">→</span>
+      <span class="bridge-step" style="border-color:rgba(255,54,33,.4);color:var(--primary)">Production Solution</span>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="container">
+    <div class="section-label reveal">Impact at Scale</div>
+    <h2 class="section-title reveal">Executive KPI Dashboard</h2>
+    <p class="section-desc reveal">Measurable outcomes across enterprise AI, data engineering, and analytics engagements.</p>
+    <div class="impact-grid">
+      <div class="impact-card glass reveal"><div class="impact-num" data-count="120">0</div><div class="impact-label">Automations Managed</div><div class="impact-context">ETL workflows, ingestion pipelines &amp; migration accelerators</div></div>
+      <div class="impact-card glass reveal"><div class="impact-num" data-count="75">0</div><div class="impact-label">Applications Supported</div><div class="impact-context">Dashboards, Databricks Apps &amp; enterprise analytics suites</div></div>
+      <div class="impact-card glass reveal"><div class="impact-num" data-count="92">0</div><div class="impact-label">% Client Billability</div><div class="impact-context">Sustained high utilization across concurrent client tracks</div></div>
+      <div class="impact-card glass reveal"><div class="impact-num" data-count="15">0</div><div class="impact-label">UI Components Built</div><div class="impact-context">React 18 + TypeScript for Databricks Apps platform</div></div>
+      <div class="impact-card glass reveal"><div class="impact-num" data-count="20">0</div><div class="impact-label">% UX Improvement</div><div class="impact-context">Navigation friction reduction in Document AI demo app</div></div>
+      <div class="impact-card glass reveal"><div class="impact-num" data-count="5">0</div><div class="impact-label">Industries Served</div><div class="impact-context">Finance, Healthcare, Manufacturing, HR &amp; Operations</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="section-label reveal">About Me</div>
+    <h2 class="section-title reveal">My Journey</h2>
+    <p class="section-desc reveal">From statistics and operations research to enterprise AI and Lakehouse engineering.</p>
+    <div class="journey-track reveal">
+      <div class="journey-node"><div class="journey-dot"></div><h4>Statistics</h4><p>BSc — Wesley College</p></div>
+      <div class="journey-node"><div class="journey-dot"></div><h4>Operations Research</h4><p>MSc — Osmania University</p></div>
+      <div class="journey-node"><div class="journey-dot"></div><h4>Data Analytics</h4><p>Teleperformance &amp; Cloud4C</p></div>
+      <div class="journey-node"><div class="journey-dot"></div><h4>BI Engineering</h4><p>Qlik · Tableau · Power BI</p></div>
+      <div class="journey-node"><div class="journey-dot" style="border-color:var(--primary)"></div><h4>Databricks AI</h4><p>Document AI · GenAI · Lakehouse</p></div>
+    </div>
+    <div class="glass reveal" style="padding:2rem;margin-top:2rem">
+      <p style="color:var(--muted);line-height:1.8;font-size:.95rem">Analytical and solutions-driven engineer with an operations research foundation. I transform company practices into efficient, data-driven operations — architecting Databricks Document AI platforms, ETL migration accelerators, and executive analytics dashboards. Certified across Databricks, Qlik, Oracle, and Microsoft ecosystems with proven client ownership at Cognida.ai.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="container">
+    <div class="section-label reveal">Capability Showcase</div>
+    <h2 class="section-title reveal">What I Build</h2>
+    <p class="section-desc reveal">Product-grade capabilities — not job titles. Each represents production systems delivered for enterprise clients.</p>
+    <div class="cap-grid">
+      <div class="cap-card glass reveal">
+        <div class="cap-icon" style="background:rgba(255,54,33,.12)">🤖</div>
+        <h3>AI &amp; GenAI</h3>
+        <p>Intelligent document processing, LLM applications, and agentic workflows on Databricks.</p>
+        <div class="cap-tags"><span class="tag">Document AI</span><span class="tag">OCR</span><span class="tag">RAG</span><span class="tag">LLM Apps</span><span class="tag">AI Agents</span><span class="tag">Prompt Engineering</span></div>
+      </div>
+      <div class="cap-card glass reveal">
+        <div class="cap-icon" style="background:rgba(0,212,255,.12)">🗄️</div>
+        <h3>Data Engineering</h3>
+        <p>Lakehouse architecture, ETL pipelines, and legacy platform modernization at scale.</p>
+        <div class="cap-tags"><span class="tag">Databricks</span><span class="tag">Delta Lake</span><span class="tag">ETL</span><span class="tag">Workflow Migration</span><span class="tag">Data Pipelines</span><span class="tag">Unity Catalog</span></div>
+      </div>
+      <div class="cap-card glass reveal">
+        <div class="cap-icon" style="background:rgba(124,58,237,.12)">📊</div>
+        <h3>Analytics Engineering</h3>
+        <p>Executive dashboards and self-service analytics across finance, HR, and operations.</p>
+        <div class="cap-tags"><span class="tag">Qlik Sense</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Oracle Analytics</span><span class="tag">Data Modeling</span></div>
+      </div>
+      <div class="cap-card glass reveal">
+        <div class="cap-icon" style="background:rgba(255,54,33,.08)">⚡</div>
+        <h3>Application Development</h3>
+        <p>Full-stack enterprise apps with FastAPI backends and React frontends on Databricks Apps.</p>
+        <div class="cap-tags"><span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">Automation Frameworks</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label reveal">Featured Projects</div>
+    <h2 class="section-title reveal">Product Showcase</h2>
+    <p class="section-desc reveal">Enterprise solutions presented as products — problem, architecture, and measurable impact.</p>
+    <div class="project-tabs reveal">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="ai">AI &amp; GenAI</button>
+      <button class="tab-btn" data-filter="data">Data Engineering</button>
+      <button class="tab-btn" data-filter="analytics">Analytics</button>
+      <button class="tab-btn" data-filter="fullstack">Full Stack</button>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<!-- DATABRICKS HUB -->
+<section id="databricks" class="db-hub">
+  <div class="container">
+    <div class="section-label reveal">Databricks Innovation Hub</div>
+    <h2 class="section-title reveal">Lakehouse &amp; AI Platform Expertise</h2>
+    <p class="section-desc reveal">Enterprise-grade Databricks capabilities — from Document AI to Unity Catalog governance.</p>
+    <div class="db-grid reveal">
+      <div class="db-tile glass"><div class="db-tile-icon">🏛️</div><h4>Lakehouse Architecture</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">📄</div><h4>Document AI</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">🤖</div><h4>Agentic AI</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">🔍</div><h4>Vector Search</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">🔐</div><h4>Unity Catalog</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">⚡</div><h4>Delta Live Tables</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">🧠</div><h4>ML Pipelines</h4></div>
+      <div class="db-tile glass"><div class="db-tile-icon">📈</div><h4>AI/BI Dashboards</h4></div>
+    </div>
+    <div class="db-arch glass reveal">
+      <h3 style="font-weight:700;margin-bottom:.5rem">Reference Architecture</h3>
+      <p style="color:var(--muted);font-size:.88rem">AdventureWorks Document AI — end-to-end data flow</p>
+      <div class="arch-diagram">
+        <div class="arch-node">📁 Documents<br><small style="color:var(--muted)">Unity Catalog Volumes</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">🤖 Document AI<br><small style="color:var(--muted)">ai_parse · ai_extract</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">⚙️ Spark Jobs<br><small style="color:var(--muted)">3-Way Reconciliation</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">🖥️ React App<br><small style="color:var(--muted)">Databricks Apps</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label reveal">Skills Matrix</div>
+    <h2 class="section-title reveal">Capability Proficiency</h2>
+    <p class="section-desc reveal">Interactive proficiency levels across core technology domains.</p>
+    <div class="matrix-wrap glass reveal" style="padding:1.5rem">
+      <table class="matrix-table" id="skillsMatrix"></table>
+    </div>
+    <div style="display:flex;gap:1.5rem;margin-top:1rem;flex-wrap:wrap;justify-content:center" class="reveal">
+      <span style="font-size:.78rem;color:var(--muted)"><span class="level-dot active"></span> Advanced</span>
+      <span style="font-size:.78rem;color:var(--muted)"><span class="level-dot expert"></span> Expert</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label reveal">Experience</div>
+    <h2 class="section-title reveal">Career Timeline</h2>
+    <p class="section-desc reveal">Outcomes and business impact — not job descriptions.</p>
+    <div class="timeline reveal" id="timeline"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="section-title reveal">Certifications &amp; Accreditations</h2>
+    <p class="section-desc reveal">Verified qualifications across cloud, data, AI, and analytics platforms.</p>
+    <div class="cert-grid" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label reveal">Recommendations</div>
+    <h2 class="section-title reveal">What Colleagues Say</h2>
+    <div class="testimonial-grid reveal">
+      <div class="testimonial glass">
+        <p>Exceptional expertise in data analytics and visualizations, consistently delivering impactful results. A collaborative team member who effectively translates business requirements into technical solutions.</p>
+        <div class="testimonial-author">Saikiran Reddy</div>
+        <div class="testimonial-role">Former Colleague — Cloud4C Services</div>
+      </div>
+      <div class="testimonial glass">
+        <p>Spearheaded complete engineering delivery of the AdventureWorks interactive layer and managed complex BI lifecycles independently — driving direct technical engagement with client leadership at enterprise scale.</p>
+        <div class="testimonial-author">Performance Review — FY 2025</div>
+        <div class="testimonial-role">Cognida.ai — Autonomous Product Engineering</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's Build Something Impactful</h2>
+        <p class="section-desc">Open to Senior Engineer, Lead Engineer, Solutions Architect, and AI/Data Consultant roles.</p>
+        <div class="contact-links">
+          <a href="mailto:sanjathsingh@gmail.com" class="contact-link glass">✉ sanjathsingh@gmail.com</a>
+          <a href="https://linkedin.com/in/Sanjath-Singh" target="_blank" rel="noopener" class="contact-link glass">🔗 linkedin.com/in/Sanjath-Singh</a>
+          <a href="tel:+919550086457" class="contact-link glass">📞 +91 9550086457</a>
+          <span class="contact-link glass">📍 Hyderabad, Telangana, India</span>
+        </div>
+      </div>
+      <div class="contact-cta glass reveal">
+        <h3>Ready to Transform Your Data?</h3>
+        <p>From Document AI to enterprise dashboards — let's discuss your next initiative.</p>
+        <a href="mailto:sanjathsingh@gmail.com?subject=Let's%20Build%20Something%20Impactful" class="btn btn-primary">Schedule a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Sanjath Singh · AI, Data &amp; Analytics Engineer · <a href="https://linkedin.com/in/Sanjath-Singh" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+const projects = [
+  { id:'docai', cat:'ai', icon:'📄', title:'Databricks Document AI Platform', tags:['Document AI','React 18','Unity Catalog','FastAPI'],
+    problem:'Enterprise documents contain unstructured data locked in PDFs, invoices, and contracts — blocking automated reconciliation and analytics.',
+    solution:'AI-powered extraction and 3-way reconciliation engine hosted natively on Databricks Apps with executive storytelling UX.',
+    stack:['Databricks Apps','Document AI','React 18','TypeScript','FastAPI','Unity Catalog','OBO Auth'],
+    impact:['Primary frontend owner — 15+ UI components','20% navigation friction reduction','Executive demo-ready platform','Type-safe Python ↔ TypeScript contracts'],
+    arch:['Unity Catalog Volumes','Document AI Parse/Extract','Spark Reconciliation','React Dashboard'] },
+  { id:'migratex', cat:'data', icon:'🔄', title:'ETL Migration Accelerator (MigrateX)', tags:['Alteryx','Informatica','Talend','ETL'],
+    problem:'Legacy ETL platforms (Alteryx, Informatica) create migration bottlenecks with manual logic translation and inconsistent metadata.',
+    solution:'Automated workflow mapping engine with metadata extraction, logic translation, and Talend pipeline generation.',
+    stack:['Talend','Python','ETL Mappings','Metadata Matrices','Alteryx','Informatica'],
+    impact:['Reduced manual migration effort at enterprise scale','Rigorous logic mapping consistency','Cross-functional pipeline automation'],
+    arch:['Source Systems','Metadata Extraction','Logic Translation','Talend Pipelines'] },
+  { id:'qlik', cat:'data', icon:'⚙️', title:'Qlik Replicate Automation Accelerator', tags:['Qlik Replicate','CDC','Ingestion'],
+    problem:'Manual ingestion setup creates inconsistent data streams, schema drift, and slow onboarding for enterprise clients.',
+    solution:'Modular ingestion automation framework with CDC pipelines, logging matrices, and schema optimization.',
+    stack:['Qlik Replicate','CDC','Schema Optimization','Python','Logging Frameworks'],
+    impact:['Client-facing architecture demos','Minimized manual setup variables','Enterprise ingestion IP for Cognida'],
+    arch:['Source Systems','CDC Layer','Replication Engine','Target Warehouse'] },
+  { id:'phia', cat:'analytics', icon:'📊', title:'Phia Analytics — HR Workforce Insights', tags:['Tableau','SQL','HR Analytics'],
+    problem:'Client leadership lacked visibility into headcount metrics, gender ratios, and resource deployment across the organization.',
+    solution:'Production Tableau dashboards with dimensional data modeling and complex SQL views for workforce intelligence.',
+    stack:['Tableau','SQL','Data Modeling','Dimensional Normalization'],
+    impact:['Sole BI developer — 35% allocation','Direct executive engagement','Manufacturing & Finance sector coverage'],
+    arch:['HR Source Data','SQL Views','Tableau Models','Executive Dashboards'] },
+  { id:'diligent', cat:'analytics', icon:'🏢', title:'Diligent Analytics — Vayaa Systems', tags:['Tableau','Enterprise BI'],
+    problem:'Operational teams needed unified analytics across complex business processes with reliable data integrity.',
+    solution:'Enterprise dashboard suite with end-to-end data modeling and stakeholder-aligned reporting.',
+    stack:['Tableau','SQL','Power BI','Data Validation'],
+    impact:['20% client allocation','Cross-sector operational delivery','End-to-end sole developer ownership'],
+    arch:['Operational Data','ETL Layer','Data Models','Dashboards'] },
+  { id:'eddy', cat:'analytics', icon:'📈', title:'EDdy Operations Analytics', tags:['Tableau','Operations'],
+    problem:'Operations teams required real-time visibility into plan document pipelines and milestone tracking.',
+    solution:'Custom Tableau dashboards for plan document pipeline tracking with structured dimensional models.',
+    stack:['Tableau','SQL Joins','Dimensional Modeling'],
+    impact:['Contributing BI developer','Plan document pipeline visibility','Multi-domain analytics delivery'],
+    arch:['Operations Data','Pipeline Tracking','Tableau','Reporting Layer'] },
+  { id:'medcan', cat:'analytics', icon:'🏥', title:'Medcan — Healthcare Analytics', tags:['Tableau','Healthcare','Analytics'],
+    problem:'Healthcare analytics require compliant reporting with actionable insights across patient and operational datasets.',
+    solution:'Enterprise healthcare analytics dashboards with structured data models and executive reporting layers.',
+    stack:['Tableau','SQL','Healthcare Data Models','Dimensional Modeling'],
+    impact:['Cross-industry healthcare vertical delivery','Compliant analytics infrastructure','Executive-ready healthcare reporting'],
+    arch:['Healthcare Data','Data Warehouse','Analytics Models','Dashboards'] },
+  { id:'manufacturing', cat:'analytics', icon:'🏭', title:'Manufacturing Dashboards', tags:['Tableau','Manufacturing','Operations'],
+    problem:'Manufacturing operations lacked unified visibility into production metrics, supply chain KPIs, and resource utilization.',
+    solution:'Production Tableau dashboards with complex joins and dimensional models across manufacturing and finance sectors.',
+    stack:['Tableau','SQL','Data Modeling','Manufacturing KPIs'],
+    impact:['Production analytics across Manufacturing vertical','Complex dimensional normalization','Executive-ready operational reporting'],
+    arch:['Manufacturing Data','ETL Pipeline','Analytics Layer','Operations Dashboards'] },
+  { id:'adventure', cat:'fullstack', icon:'🖥️', title:'AdventureWorks — Full-Stack Databricks App', tags:['React','FastAPI','Databricks Apps'],
+    problem:'Complex batch reconciliation jobs (1–3 min) needed resilient UX with session persistence and secure file handling.',
+    solution:'React 18 SPA with async processing patterns, OBO token middleware, and skeleton loading states for long-running jobs.',
+    stack:['React 18','TypeScript','Vite','FastAPI','Custom Hooks','OBO Middleware'],
+    impact:['Session-persistent batch UX','Secure HTTP PUT to Unity Catalog','15+ shared UI components'],
+    arch:['React Frontend','FastAPI Middleware','Databricks Jobs','Unity Catalog'] }
+];
+
+const experience = [
+  { period:'Jun 2024 — Present', role:'Software Engineer — Analytics', company:'Cognida.ai', impact:'Primary frontend owner for AdventureWorks Databricks IDP app. Sole BI developer on Phia, Diligent & EDdy tracks. 92% billability across 5 concurrent client engagements.', tags:['Databricks Apps','Document AI','React 18','Tableau','MigrateX','Qlik Replicate'] },
+  { period:'Jan 2023 — Jun 2024', role:'Engineer — Data Analytics', company:'Cloud4C Services', impact:'Delivered enterprise data analytics and visualization solutions. Built client-facing dashboards and data pipelines for global enterprise accounts.', tags:['Qlik','Power BI','SQL','Data Modeling','Python'] },
+  { period:'Apr 2022 — Dec 2022', role:'Data Analyst', company:'Teleperformance', impact:'Worked on Machine Learning and research projects. Applied statistical methods and data analysis to operational business problems.', tags:['Python','Machine Learning','Statistics','Research'] }
+];
+
+const certs = [
+  { name:'Databricks Certified Data Engineer Professional', issuer:'Databricks Inc.', date:'Apr 2026', featured:true, link:'https://credentials.databricks.com/profile/sanjathsingh4291/wallet' },
+  { name:'Partner Training — Financial Services Gen AI & LLM', issuer:'Databricks Academy', date:'Sep 2025', featured:true, link:'#' },
+  { name:'Certified Scrum Product Owner (CSPO)', issuer:'Scrum Alliance', date:'May 2025', featured:false, link:'#' },
+  { name:'Qlik Sense Business Analyst', issuer:'Qlik / Credly', date:'May 2025', featured:false, link:'#' },
+  { name:'Google Business Intelligence Professional', issuer:'Google / Coursera', date:'Feb 2025', featured:false, link:'#' },
+  { name:'Talend Certified Solution Architect', issuer:'Qlik / Credly', date:'Nov 2024', featured:false, link:'#' },
+  { name:'Oracle Cloud Enterprise Analytics Professional', issuer:'Oracle University', date:'Mar 2024', featured:false, link:'#' },
+  { name:'Microsoft Power Platform App Maker (PL-100)', issuer:'Microsoft', date:'Feb 2024', featured:false, link:'#' },
+  { name:'Academy Accreditation — Generative AI Fundamentals', issuer:'Databricks Academy', date:'Jul 2023', featured:false, link:'#' },
+  { name:'Academy Accreditation — Lakehouse Fundamentals', issuer:'Databricks Academy', date:'Jul 2023', featured:false, link:'#' }
+];
+
+const skills = [
+  { name:'Databricks', level:4 },{ name:'Document AI', level:4 },{ name:'Python', level:3 },{ name:'FastAPI', level:3 },
+  { name:'Qlik Sense', level:3 },{ name:'Power BI', level:3 },{ name:'Tableau', level:3 },{ name:'SQL', level:4 },
+  { name:'Oracle Analytics', level:3 },{ name:'AI/ML', level:3 },{ name:'ETL / Talend', level:3 },{ name:'React / TypeScript', level:3 }
+];
+const levels = ['Beginner','Intermediate','Advanced','Expert'];
+
+function renderProjects(filter='all') {
+  const grid = document.getElementById('projectGrid');
+  grid.innerHTML = projects.filter(p => filter==='all'||p.cat===filter).map(p => `
+    <div class="project-card glass" data-id="${p.id}">
+      <div class="project-hero">${p.icon}</div>
+      <div class="project-body">
+        <h3>${p.title}</h3>
+        <p>${p.problem.slice(0,100)}…</p>
+        <div class="project-meta">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+  grid.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => openModal(projects.find(p=>p.id===card.dataset.id)));
+  });
+}
+
+function openModal(p) {
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-sub">${p.cat.toUpperCase()} · Enterprise Solution</div>
+    <div class="modal-title">${p.title}</div>
+    <div class="modal-section"><h4>Problem</h4><p>${p.problem}</p></div>
+    <div class="modal-section"><h4>Solution</h4><p>${p.solution}</p></div>
+    <div class="modal-section"><h4>Architecture</h4><div class="modal-arch">${p.arch.map(a=>`<div>${a}</div>`).join('')}</div></div>
+    <div class="modal-section"><h4>Technology Stack</h4><p>${p.stack.map(s=>`<span class="tag" style="margin:.2rem">${s}</span>`).join('')}</p></div>
+    <div class="modal-section"><h4>Business Impact</h4><ul>${p.impact.map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
+  document.getElementById('modal').classList.add('open');
+}
+
+function renderTimeline() {
+  document.getElementById('timeline').innerHTML = experience.map(e => `
+    <div class="tl-item">
+      <div class="tl-period">${e.period}</div>
+      <div class="tl-role">${e.role}</div>
+      <div class="tl-company">${e.company}</div>
+      <div class="tl-impact">${e.impact}</div>
+      <div class="tl-tags">${e.tags.map(t=>`<span class="tag tag-purple">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+function renderCerts() {
+  document.getElementById('certGrid').innerHTML = certs.map(c => `
+    <div class="cert-card glass ${c.featured?'featured':''}">
+      <div class="cert-issuer">${c.issuer}</div>
+      <div class="cert-name">${c.name}</div>
+      <div class="cert-date">${c.date}</div>
+      <div class="cap-tags">${c.featured?'<span class="tag tag-red">Featured</span>':''}<a href="${c.link}" target="_blank" rel="noopener" class="tag">Verify ↗</a></div>
+    </div>`).join('');
+}
+
+function renderSkillsMatrix() {
+  let html = '<thead><tr><th>Capability</th>' + levels.map(l=>`<th>${l}</th>`).join('') + '</tr></thead><tbody>';
+  skills.forEach(s => {
+    html += `<tr><td>${s.name}</td>`;
+    for(let i=1;i<=4;i++) {
+      const cls = i===s.level ? (s.level===4?'expert':'active') : '';
+      html += `<td><span class="level-dot ${cls}" title="${levels[i-1]}"></span></td>`;
+    }
+    html += '</tr>';
+  });
+  document.getElementById('skillsMatrix').innerHTML = html + '</tbody>';
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+document.getElementById('modalClose').addEventListener('click', () => document.getElementById('modal').classList.remove('open'));
+document.getElementById('modal').addEventListener('click', e => { if(e.target.id==='modal') document.getElementById('modal').classList.remove('open'); });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function countUp(el, suffix='+') {
+  const target = +el.dataset.count;
+  let current = 0;
+  const step = Math.max(1, Math.ceil(target / 40));
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current + (current >= target ? suffix : '');
+    if (current >= target) clearInterval(timer);
+  }, 30);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.done) {
+      e.target.dataset.done = '1';
+      e.target.querySelectorAll('.stat-val[data-count]').forEach(el => countUp(el, '+'));
+    }
+  });
+}, { threshold: 0.3 });
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) counterObs.observe(heroStats);
+const impactSection = document.getElementById('impact');
+if(impactSection) {
+  const impactObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting && !e.target.dataset.counted) {
+        e.target.dataset.counted='1';
+        e.target.querySelectorAll('.impact-num[data-count]').forEach(el => {
+          const isPct = el.nextElementSibling?.textContent.includes('%');
+          countUp(el, isPct ? '%' : '+');
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+  impactObs.observe(impactSection);
+}
+
+window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40));
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const html = document.documentElement;
+  const dark = html.dataset.theme !== 'light';
+  html.dataset.theme = dark ? 'light' : 'dark';
+  document.getElementById('themeToggle').textContent = dark ? '🌙' : '☀';
+});
+
+document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+
+const canvas = document.getElementById('particles');
+if(canvas) {
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+  resize(); window.addEventListener('resize', resize);
+  for(let i=0;i<60;i++) particles.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*2+0.5, dx:(Math.random()-.5)*.3, dy:(Math.random()-.5)*.3 });
+  function drawParticles() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,212,255,0.35)'; ctx.fill();
+      p.x+=p.dx; p.y+=p.dy;
+      if(p.x<0||p.x>canvas.width)p.dx*=-1;
+      if(p.y<0||p.y>canvas.height)p.dy*=-1;
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+}
+
+const titles = ['AI, Data & Analytics Engineer','Databricks Engineer','Analytics Engineer','AI Solutions Developer','Data Platform Engineer','Business Intelligence Consultant'];
+let ti = 0;
+setInterval(() => {
+  const el = document.getElementById('rotatingTitle');
+  if (el) { ti = (ti + 1) % titles.length; el.style.opacity = '0'; setTimeout(() => { el.textContent = titles[ti]; el.style.opacity = '1'; }, 300); }
+}, 3500);
+
+renderProjects(); renderTimeline(); renderCerts(); renderSkillsMatrix();
+</script>
+</body>
+</html>
+
