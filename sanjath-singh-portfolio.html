@@ -173,8 +173,7 @@ body { background: var(--bg); color: var(--text); overflow-x: hidden; font-famil
     </p>
     <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
       <a href="#projects" class="btn-primary">View Projects <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
-      <!-- CHANGED: Linked the Download Resume button to trigger the JS blob download -->
-      <a href="#" id="downloadResumeBtn" class="btn-ghost">Download Resume <i data-lucide="download" class="w-5 h-5"></i></a>
+      <a href="Sanjath-Singh-Resume.pdf" download="Sanjath-Singh-Resume.pdf" class="btn-ghost">Download Resume <i data-lucide="download" class="w-5 h-5"></i></a>
       <a href="#contact" class="btn-ghost">Contact Me <i data-lucide="mail" class="w-5 h-5"></i></a>
     </div>
     <div id="heroStats" data-aos="fade-up" data-aos-delay="400" class="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -547,80 +546,6 @@ document.getElementById('themeToggle').addEventListener('click', () => {
   lucide.createIcons();
 });
 document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
-
-// CHANGED: ADDED DOWNLOAD RESUME JS LOGIC[cite: 5]
-document.getElementById('downloadResumeBtn').addEventListener('click', function(e) {
-  e.preventDefault();
-  const resumeText = `Sanjath Singh H
-https://www.linkedin.com/in/Sanjath-Singh/
-https://bold.pro/my/sanjath-singh/486r
-9550086457 | sanjathsingh@gmail.com | Hyderabad, India
-
-Professional Summary
-Analytical and solutions-driven professional with a background in operations research offering foundation in engineering, project management and design. Experienced in developing, documenting, and delivering process innovations. Skilled at transforming company practices into more efficient operations.
-
-Experience
-Software Engineer- Qlik Sense
-Cognida.ai, Hyderabad, India | June 2024 - Current
-• Worked on ETL data flow mappings for MigrateX to support migration of workflows from Alteryx/Informatica to Talend, including logic mapping and metadata documentation.
-• Built a Qlik Replicate-based accelerator by defining ingestion workflows and contributing to solution architecture discussions and demos.
-• Developed dashboards for Diligent and Phia, including HR dashboards for workforce insights and Tableau dashboards for drafting and plan document tracking, with end-to-end data modelling and joins.
-• Translated business requirements into Qlik/Tableau data models and SQL logic, keeping reporting consistency and KPI definitions in mind.
-• Worked on optimizing Qlik expressions and load scripts to improve dashboard performance.
-• Built basic validation and QA checks to ensure data consistency and reduce reporting issues.
-
-Engineer- Data Analytics
-Cloud4C Services Pvt Ltd, Hyderabad, India | January 2023 - May 2024
-• Built enterprise BI reporting solutions using Power BI, Oracle Analytics, SQL, and Power Platform to support business-wide analytics and data management.
-• Managed and optimized 120+ automated flows and 75+ applications, ensuring operational efficiency, governance alignment, and continuity of reporting.
-• Led the Medcan analytics modernization by migrating Tableau dashboards to Power BI and setting up secure enterprise data gateways.
-• Developed optimized Power BI data models by converting Tableau logic into efficient DAX, relational models, and reusable reporting layers.
-• Created Oracle Analytics dashboards by integrating multiple data sources, defining transformations, and standardizing KPI logic.
-• Automated monitoring and validation using Airflow, SharePoint, and Power Platform to improve reporting reliability and reduce manual effort.
-
-Data Analyst
-Teleperformance India Private Limited, Hyderabad, India | Apr 2022 - Dec 2022
-• Experienced in Cloud-based Machine Learning, research, and developed data pipelines to acquire, clean and process data.
-
-Projects
-• Client Dashboard Development (Diligent, Phia | Manufacturing, Finance, Healthcare): Built dashboards across domains with KPIs like schedule adherence, productivity, and performance tracking. Developed HR dashboards for workforce insights.
-• MigrateX-ETL Workflow Migration Accelerator: Developing a solution to automate ETL workflow migration (Alteryx/Informatica to Talend).
-• Qlik Replicate Automation Accelerator: Led development of an ingestion automation framework and demonstrated solution architecture in client presentations.
-• Enterprise Dashboard Development (Manufacturing | Finance | Healthcare): Built analytical dashboards with KPI logic such as schedule adherence and performance metrics to support decision-making.
-• Power Platform Migration (Retail & Aviation): Migrated and optimized Power Platform apps and flows to improve automation efficiency.
-• Medcan - Tableau to Power BI Migration: Modernized reporting assets by migrating Tableau dashboards to Power BI and configuring secure enterprise data gateways.
-• Automated Power BI Reporting (Finance): Built automated Power BI dashboards with trend analytics (weekly, monthly, yearly) to support executive reporting.
-• Delivery Performance Analytics - Oracle Analytics: Developed automated Oracle Analytics dashboards to track logistics KPIs and operational performance.
-
-Skills
-• Qlik, Power BI, Oracle Analytics, Business Acumen
-• Microsoft Power Platform
-• Azure Cloud
-• Data Storytelling, EDA, ETL
-• SQL, Python Programming for Data Analysis
-
-Education
-• Master of Science (M.S.): Operations Research - Osmania University, Hyderabad, India | March 2023
-• Bachelor of Science (B.S.): Statistics - Osmania University, Hyderabad, India | March 2021
-
-Certification
-• Talent Solutions Architect | November 2024
-• Certified Scrum Product Owner (CSPO) | May 2025
-• Oracle- Enterprise Analytics Professional 1Z0-1041-24 | March 2024
-• Power App Maker Associate- PL 100 | February 2024
-• Qlik Sense Business Analyst | May 2025
-• Databricks Certified Machine Learning Professional | April 2026`;
-
-  const blob = new Blob([resumeText], { type: "text/plain" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "Sanjath_Singh_Resume.txt";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-});
 
 renderProjects(); renderTimeline(); renderCerts();
 lucide.createIcons();
