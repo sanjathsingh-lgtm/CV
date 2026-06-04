@@ -550,6 +550,15 @@ document.getElementById('menuToggle').addEventListener('click', () => document.g
 renderProjects(); renderTimeline(); renderCerts();
 lucide.createIcons();
 AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }, 50);
+  }
+});
 </script>
 </body>
 </html>
